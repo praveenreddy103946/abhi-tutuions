@@ -1,0 +1,238 @@
+@import "../../styles/variables.css";
+
+/* Sections */
+.admissions_section {
+  background: var(--color-bg);
+}
+
+.admissions_form-section {
+  background: var(--color-white);
+}
+
+.admissions_inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* Steps */
+.admissions_steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.admissions_steps::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  right: 60px;
+  height: 2px;
+  background: var(--color-border);
+  z-index: 0;
+}
+
+.admissions_step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.admissions_step-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-crimson);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(192, 57, 43, 0.3);
+}
+
+.admissions_step-line {
+  display: none;
+}
+
+.admissions_step-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--color-navy);
+  margin: 8px 0;
+}
+
+.admissions_step-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Form */
+.admissions_form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.admissions_highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.admissions_highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--color-charcoal);
+}
+
+.admissions_form-wrap {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.admissions_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admissions_form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.admissions_field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admissions_field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.admissions_field input,
+.admissions_field select,
+.admissions_field textarea {
+  padding: 12px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: var(--font-body);
+  background: var(--color-white);
+  color: var(--color-charcoal);
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.admissions_field input:focus,
+.admissions_field select:focus,
+.admissions_field textarea:focus {
+  border-color: var(--color-navy);
+}
+
+/* Submit Button */
+.admissions_submit {
+  background: var(--color-navy);
+  color: var(--color-white);
+  border: none;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  align-self: flex-start;
+}
+
+.admissions_submit:hover {
+  background: var(--color-navy-light);
+  transform: translateY(-2px);
+}
+
+/* Success */
+.admissions_success {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.admissions_success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-forest);
+  color: var(--color-white);
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.admissions_success h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--color-charcoal);
+  margin: 0 0 8px;
+}
+
+.admissions_success p {
+  color: var(--color-text-muted);
+  margin: 0 0 24px;
+}
+
+.admissions_reset {
+  background: none;
+  border: 2px solid var(--color-charcoal);
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.admissions_reset:hover {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admissions_steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .admissions_steps::before {
+    display: none;
+  }
+
+  .admissions_form-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .admissions_form-row {
+    grid-template-columns: 1fr;
+  }
+}

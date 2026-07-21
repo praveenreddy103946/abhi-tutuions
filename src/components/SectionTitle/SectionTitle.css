@@ -1,0 +1,102 @@
+@import "../../styles/variables.css";
+
+/* =========================
+   Section Title
+========================= */
+
+.section-title {
+  margin-bottom: 48px;
+}
+
+.section-title--center {
+  text-align: center;
+}
+
+.section-title--left {
+  text-align: left;
+}
+
+/* Subtitle */
+
+.section-title__sub {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.section-title__sub--crimson {
+  color: var(--color-crimson);
+}
+
+.section-title__sub--forest {
+  color: var(--color-forest);
+}
+
+.section-title__sub--navy {
+  color: var(--color-navy);
+}
+
+.section-title__sub--olive {
+  color: var(--color-olive);
+}
+
+/* Heading */
+
+.section-title__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 4vw, 40px);
+  color: var(--color-charcoal);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+/* Description */
+
+.section-title__desc {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  line-height: 1.7;
+  margin: 0 auto 20px;
+}
+
+/* Left-aligned description */
+.section-title--left .section-title__desc {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Divider Bar */
+
+.section-title__bar {
+  width: 50px;
+  height: 3px;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* Left-aligned divider */
+.section-title--left .section-title__bar {
+  margin: 0;
+}
+
+/* Bar Colors */
+
+.section-title__bar--crimson {
+  background: var(--color-crimson);
+}
+
+.section-title__bar--forest {
+  background: var(--color-forest);
+}
+
+.section-title__bar--navy {
+  background: var(--color-navy);
+}
+
+.section-title__bar--olive {
+  background: var(--color-olive);
+}

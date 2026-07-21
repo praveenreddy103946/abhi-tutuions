@@ -1,0 +1,241 @@
+@import "../../styles/variables.css";
+
+.about_inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* Mission */
+.about_mission {
+  background: var(--color-white);
+}
+
+.about_mission-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about_body-text {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Badges */
+.about_badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.about_badge {
+  border-radius: var(--radius-md);
+  padding: 28px 20px;
+  text-align: center;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.about_badge--navy {
+  background: var(--color-navy);
+}
+
+.about_badge--crimson {
+  background: var(--color-crimson);
+}
+
+.about_badge--forest {
+  background: var(--color-forest);
+}
+
+.about_badge--olive {
+  background: var(--color-olive);
+}
+
+.about_badge-num {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Vision */
+.about_vision {
+  background: var(--color-bg);
+  padding: 80px 24px;
+}
+
+.about_vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.about_vision-box {
+  border-radius: var(--radius-md);
+  padding: 40px 32px;
+  color: var(--color-white);
+}
+
+.about_vision-box--mission {
+  background: linear-gradient(
+    135deg,
+    var(--color-navy) 0%,
+    #1e3d6b 100%
+  );
+}
+
+.about_vision-box--vision {
+  background: linear-gradient(
+    135deg,
+    var(--color-crimson) 0%,
+    #7b1e2f 100%
+  );
+}
+
+.about_vision-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.about_vision-box h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+
+.about_vision-box p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* Values */
+.about_values {
+  background: var(--color-white);
+}
+
+.about_values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+.about_value-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: all var(--transition);
+  border-bottom: 3px solid transparent;
+}
+
+.about_value-card:hover {
+  transform: translateY(-4px);
+  border-bottom-color: var(--color-olive);
+  box-shadow: var(--shadow-md);
+}
+
+.about_value-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.about_value-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--color-navy);
+  margin: 8px 0;
+}
+
+.about_value-desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Team */
+.about_team {
+  background: var(--color-bg);
+}
+
+.about_team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+.about_team-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+
+.about_team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.about_team-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.about_team-name {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--color-charcoal);
+  margin: 0 0 4px;
+}
+
+.about_team-role {
+  font-size: 13px;
+  color: var(--color-crimson);
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.about_team-subject {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0 0 12px;
+}
+
+.about_team-exp {
+  display: inline-block;
+  font-size: 12px;
+  background: var(--color-bg);
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: var(--color-forest);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about_mission-grid,
+  .about_vision-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

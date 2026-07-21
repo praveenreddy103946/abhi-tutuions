@@ -1,0 +1,83 @@
+@import "../../styles/variables.css";
+
+.gallery-item {
+  border-radius: var(radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(-transition);
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-1g);
+}
+
+.gallery-item_img {
+  aspect-ratio: 4/3;
+  background-color: var(--color-navy);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-item_placeholder {
+  font-size: 40px;
+  opacity: 0.4;
+}
+
+.gallery-item_overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(26, 43, 74, 0.6);
+
+  opacity: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition: opacity var(--transition);
+
+  -gallery-item:hover .gallery-item_overlay {
+    opacity: 1;
+  }
+}
+
+.gallery-item_zoom {
+  font-size: 32px;
+}
+
+.gallery-item_info {
+  background: var(--color-white);
+  padding: 12px 16px;
+}
+
+.gallery-item_category {
+  font-size: 11px;
+  color: var(--color-forest);
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin: 0 0 4px;
+}
+
+.gallery-item_title {
+  font-family: var(--font-heading);
+
+  font-size: 14px;
+
+  color: var(--color-charcoal);
+
+  margin: 0;
+}

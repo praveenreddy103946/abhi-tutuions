@@ -1,0 +1,118 @@
+@import "../../styles/variables.css";
+
+.video-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-crimson);
+}
+
+.video-card--active {
+  box-shadow: 0 0 4px rgba(192, 57, 43, 0.15);
+  border-color: var(--color-crimson);
+}
+
+.video-card__thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(
+    135deg,
+    var(--color-navy) 0%,
+    var(--color-crimson) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-card__play-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(192, 57, 43, 0.85);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  padding-left: 3px;
+  transition: transform var(--transition);
+}
+
+.video-card:hover .video-card__play-icon {
+  transform: scale(1.1);
+}
+
+.video-card__subject {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.video-card__subject--mathematics {
+  background: var(--color-navy);
+}
+
+.video-card__subject--science {
+  background: var(--color-forest);
+}
+
+.video-card__subject--english {
+  background: var(--color-olive);
+}
+
+.video-card__subject--social-studies {
+  background: var(--color-crimson);
+}
+
+.video-card__duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 11px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.video-card__info {
+  padding: 16px;
+}
+
+.video-card__title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--color-charcoal);
+  margin: 0 0 4px;
+}
+
+.video-card__grade {
+  font-size: 12px;
+  color: var(--color-crimson);
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.video-card__desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}

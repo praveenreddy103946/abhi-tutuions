@@ -1,0 +1,171 @@
+@import '../../styles/variables.css';
+
+.vp {
+  position: relative;
+  background: #000;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  user-select: none;
+}
+
+.vp__video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+}
+
+.vp__big-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(192, 57, 43, 0.85);
+  color: var(--color-white);
+  font-size: 28px;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  padding-left: 4px;
+
+}
+
+.vp__big-play:hover {
+  background: var(--color-crimson);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.vp__controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  padding: 32px 16px 12px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.controls-visible {
+  opacity: 1;
+}
+
+.vp:hover .vp__controls {
+  opacity: 1;
+}
+
+.vp__progress-bar {
+  position: relative;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: height 0.15s;
+}
+
+.vp__progress-bar:hover {
+  height: 6px;
+}
+
+.vp__buffered {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.vp__played {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--color-crimson);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.vp__thumb {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-white);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.vp__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.vp__toolbar-left,
+.vp__toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vp__btn {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  line-height: 1;
+}
+
+.vp__btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.vp__volume {
+  width: 72px;
+  height: 3px;
+  accent-color: var(--color-crimson);
+  cursor: pointer;
+}
+
+.vp__time {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.vp__title {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vp--fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  border-radius: 0;
+}
