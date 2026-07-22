@@ -9,12 +9,12 @@ export default function CourseCard({
 }) {
   return (
     <div className="course-card">
-      <div className="course-card_icon">{icon}</div>
-      <h3 className="course-card_title">{title}</h3>
-      <p className="course-card_grades">Grades: {grades}</p>
-      <p className="course-card desc">{description}</p>
+      <div className="course-card__icon">{icon}</div>
+      <h3 className="course-card__title">{title}</h3>
+      <p className="course-card__grades">Grades: {grades}</p>
+      <p className="course-card__desc">{description}</p>
       {features && (
-        <ul className="course-card features">
+        <ul className="course-card__features">
           {features.map((f, i) => (
             <li key={i}>{f}</li>
           ))}

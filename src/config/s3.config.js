@@ -12,7 +12,7 @@ export const VIDEO_CATALOG = [
       "Covers number systems, basic algebra, and geometry fundamentals.",
     duration: "45 min",
     thumbnail: null,
-    filename: "Demo1_tutorial.mp4",
+    filename: "dem01_lecture.mp4",
   },
   {
     id: 2,

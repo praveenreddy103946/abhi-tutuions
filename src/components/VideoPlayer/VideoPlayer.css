@@ -54,7 +54,7 @@
   transition: opacity var(--transition);
 }
 
-.controls-visible {
+.vp__controls-visible {
   opacity: 1;
 }
 

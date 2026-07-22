@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Hero.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Hero.css';
 
 export default function Hero({
   title,
@@ -8,7 +8,7 @@ export default function Hero({
   description,
   primaryCta,
   secondaryCta,
-  backgroundVariant = "navy",
+  backgroundVariant = 'navy',
 }) {
   return (
     <section className={`hero hero--${backgroundVariant}`}>
