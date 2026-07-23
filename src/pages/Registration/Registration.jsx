@@ -1,30 +1,7 @@
 import React, { useState } from "react";
-import Hero from "../../components/Hero/Hero";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
-import "./Admissions.css";
-
-const STEPS = [
-  {
-    step: "1",
-    title: "Submit Inquiry",
-    desc: "Fill out the enquiry form below or call us directly.",
-  },
-  {
-    step: "2",
-    title: "Diagnostic Assessment",
-    desc: "A short test to understand the student's current level.",
-  },
-  {
-    step: "3",
-    title: "Learning Plan",
-    desc: "We prepare a custom learning plan with subject focus and schedule.",
-  },
-  {
-    step: "4",
-    title: "Enroll & Begin",
-    desc: "Confirm enrollment and start attending classes within 2 days.",
-  },
-];
+import "../Admissions/Admissions.css";
+import "./Registration.css";
 
 const INITIAL = {
   name: "",
@@ -36,7 +13,7 @@ const INITIAL = {
   message: "",
 };
 
-export default function Admissions() {
+export default function Registration() {
   const [form, setForm] = useState(INITIAL);
   const [submitted, setSubmitted] = useState(false);
 
@@ -49,45 +26,23 @@ export default function Admissions() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Save to localStorage
+    const existingRegistrations = JSON.parse(localStorage.getItem("registrations") || "[]");
+    const newRegistration = { ...form, timestamp: new Date().toISOString() };
+    localStorage.setItem("registrations", JSON.stringify([...existingRegistrations, newRegistration]));
+    
     setSubmitted(true);
   };
 
   return (
-    <main>
-      <Hero
-        subtitle="Admissions"
-        titlePart1="Begin Your Academic Journey"
-        description="We welcome motivated students from Grade 5 to Grade 10. Limited seats available—apply today."
-      />
-
-      {/* Admission Steps */}
-      <section className="admissions_section">
-        <div className="admissions_inner">
-          <SectionTitle
-            subtitle="How to Join"
-            title="Admission Process"
-            description="Simple, transparent, and student-friendly. Join in just 4 steps."
-          />
-
-          <div className="admissions_steps">
-            {STEPS.map(({ step, title, desc }) => (
-              <div key={step} className="admissions_step">
-                <div className="admissions_step-circle">{step}</div>
-                <h4 className="admissions_step-title">{title}</h4>
-                <p className="admissions_step-desc">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Admission Form */}
-      <section className="admissions_form-section">
+    <main className="registration-page">
+      <section className="admissions_form-section registration-section">
         <div className="admissions_inner admissions_form-grid">
 
           <div className="admissions_info">
             <SectionTitle
-              subtitle="Enquire Now"
+              subtitle="Registration"
               title="Apply for Admission"
               align="left"
               accentColor="forest"

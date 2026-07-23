@@ -1,12 +1,12 @@
 // Base URL of your videos folder
-export const BUCKET_BASE_URL = "/videos";
+export const BUCKET_BASE_URL = "https://abhi-tutorials-bucket.s3.eu-north-1.amazonaws.com";
 
 // Video Catalog
 export const VIDEO_CATALOG = [
   {
     id: 1,
-    title: "DEMO 1",
-    subject: "Sample Subject",
+    title: "Fundamentals of Mathematics",
+    subject: "Mathematics",
     grade: "Grade 6-8",
     description:
       "Covers number systems, basic algebra, and geometry fundamentals.",
@@ -23,7 +23,7 @@ export const VIDEO_CATALOG = [
       "Introduction to Physics, Chemistry and Biology concepts.",
     duration: "50 min",
     thumbnail: null,
-    filename: "science-fundamentals.mp4",
+    filename: "demo2_lecture.mp4",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ export const VIDEO_CATALOG = [
       "Parts of speech, sentence structure and writing skills.",
     duration: "40 min",
     thumbnail: null,
-    filename: "english-grammar.mp4",
+    filename: "demo3_lecture.mp4",
   },
   {
     id: 4,

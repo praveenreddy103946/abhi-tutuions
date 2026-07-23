@@ -92,15 +92,13 @@ export default function Home() {
   return (
     <main>
       <Hero
-        subtitle="Welcome to ABHI TUITIONS"
-        title="Unlocking Every Student's Full Potential"
-        description="Expert tutoring, personalized attention, and proven methods helping students from Grade 5 to Grade 12 achieve academic excellence."
-        primaryCta={{ to: "/admissions", label: "Enroll Today" }}
-        secondaryCta={{
-          to: "/demo-tutorials",
-          label: "Watch Free Demos",
-        }}
-        backgroundVariant="navy"
+        subtitle="WELCOME TO ABHI TUITIONS"
+        titlePart1="Learn Today. "
+        titlePart2="Lead Tomorrow."
+        mainSubtitle="Quality Education. Better Future."
+        description="Empowering students with knowledge, skills and confidence"
+        primaryCta={{ to: "/register", label: "Enroll Now" }}
+        secondaryCta={{ to: "/demo-tutorials", state: { skipHero: true }, label: "Demo Classes" }}
       />
 
       <StatsBanner />
@@ -143,7 +141,7 @@ export default function Home() {
                   ['📊', 'Regular assessments & progress tracking'],
                   ['💡', 'Doubt-clearing sessions every week'],
                   ['🏆', 'Proven results – 98% of students improve grades'],
-                ].map((icon,text) => (
+                ].map(([icon, text]) => (
                   <li key={text}>
                     <span className="home_why-icon">{icon}</span>
                     {text}

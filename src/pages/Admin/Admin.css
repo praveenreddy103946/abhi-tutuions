@@ -1,0 +1,721 @@
+/* Login Page Specific */
+.admin-login-page {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 20%);
+}
+
+.admin-login-layout {
+  display: flex;
+  background: transparent;
+  width: 100%;
+  max-width: 1100px;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Side Info */
+.admin-login-info {
+  flex: 1;
+  padding: 2rem;
+}
+
+.admin-login-shield-icon {
+  margin-bottom: 2rem;
+  display: inline-flex;
+  padding: 1rem;
+  border-radius: 50%;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.admin-login-main-title {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.admin-login-main-subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.admin-login-divider {
+  width: 60px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 2px;
+  margin-bottom: 2.5rem;
+}
+
+.admin-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.admin-feature-icon {
+  background: #f1f5f9;
+  padding: 0.8rem;
+  border-radius: 50%;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-feature-item h4 {
+  color: #0f172a;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.admin-feature-item p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Right Side Form */
+.admin-login-form-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-login-card {
+  background: white;
+  padding: 3.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
+}
+
+.admin-login-title {
+  text-align: center;
+  color: #0f172a;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.admin-login-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-login-form-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+.admin-error {
+  background: #fef2f2;
+  color: #ef4444;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 1px solid #fecaca;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-field label {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.admin-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.admin-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #94a3b8;
+}
+
+.admin-field input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.admin-field input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.admin-toggle-password {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.admin-toggle-password:hover {
+  color: #475569;
+}
+
+.admin-form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.admin-remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.admin-remember-me input {
+  accent-color: #3b82f6;
+}
+
+.admin-forgot-password {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.admin-forgot-password:hover {
+  text-decoration: underline;
+}
+
+.admin-submit-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.admin-submit-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.admin-login-footer {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #10b981;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Responsive Login */
+@media (max-width: 900px) {
+  .admin-login-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .admin-login-info {
+    text-align: center;
+    padding: 1rem;
+  }
+  .admin-login-divider {
+    margin: 0 auto 2rem;
+  }
+  .admin-features {
+    align-items: center;
+    text-align: left;
+  }
+}
+
+
+/* Dashboard Layout */
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: #f5f7fb;
+  padding-bottom: 4rem;
+}
+
+.admin-hero {
+  position: relative;
+  height: 350px;
+  background-size: cover;
+  background-position: center 20%;
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+}
+
+.admin-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.6));
+}
+
+.admin-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 4rem;
+}
+
+.admin-welcome {
+  color: #4ade80;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.admin-welcome::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #4ade80;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.admin-hero-text {
+  position: relative;
+}
+
+.admin-title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.admin-subtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.admin-logout-btn {
+  background-color: white;
+  color: #0f172a;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+.admin-logout-btn:hover {
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.admin-content-wrapper {
+  max-width: 1400px;
+  margin: -80px auto 0;
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+}
+
+.admin-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
+
+.admin-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-icon-wrapper {
+  background-color: #eff6ff;
+  padding: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-header-title h2 {
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.admin-header-title p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.admin-header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.admin-search {
+  position: relative;
+}
+
+.admin-search input {
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  width: 300px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.admin-filter-btn,
+.admin-refresh-btn {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #475569;
+}
+
+.admin-refresh-btn {
+  padding: 0.6rem;
+}
+
+.admin-filter-btn:hover,
+.admin-refresh-btn:hover {
+  background: #f8fafc;
+}
+
+.admin-table-container {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  background-color: #0f172a;
+  color: white;
+  padding: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.admin-table th:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.admin-table th:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.admin-table td {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.admin-cell-date {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.admin-cell-student {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.student-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cell-icon {
+  color: #94a3b8;
+}
+
+.font-medium {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.text-sm {
+  font-size: 0.85rem;
+}
+
+.text-gray {
+  color: #64748b;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.grade-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Colors matching the Figma image */
+.grade-5 {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.grade-6 {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.grade-7 {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.grade-8 {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.grade-9 {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.grade-10 {
+  background: #ffe4e6;
+  color: #9f1239;
+}
+
+.grade-default {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.subject-badge {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+.subject-math {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.subject-science {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.subject-default {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.admin-message-cell {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.action-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.admin-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 1rem 0.5rem 0;
+  border-top: 1px solid #f1f5f9;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination-controls button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+}
+
+.pagination-controls button.active {
+  background: #0f172a;
+  color: white;
+  border-color: #0f172a;
+}
+
+.pagination-controls button:hover:not(.active):not(:disabled) {
+  background: #f8fafc;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  font-size: 1.1rem;
+}

@@ -26,10 +26,10 @@ export default function Footer() {
               in
             </a>
             <a href="#!" aria-label="YouTube" className="footer__social">
-              y
+              ▶
             </a>
             <a href="#!" aria-label="Twitter" className="footer__social">
-              X
+              𝕏
             </a>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function Footer() {
           <ul className="footer__list footer__list--contact">
             <li>123 Education Lane, Knowledge City</li>
             <li>+91 98765 43210</li>
-            <li>info@abhi-tuitions.com</li>
+            <li>info@abhituitions.com</li>
             <li>Mon-Sat: 8:00 AM - 7:00 PM</li>
           </ul>
         </div>

@@ -10,19 +10,21 @@
 
 --color-olive: #6B8E23;
 
+--color-accent: #F4C430;
+
 --color-charcoal-light: #4a4a4a;
 
 --color-navy-light: #243d6b;
 
 --color-crimson-light: #e74c3c;
 
---color-forest-light: #3388e3c;
+--color-forest-light: #388e3c;
 
 --color-olive-light: #8aab35;
 
 --color-bg: #f9f9f9;
 
---color-bg-dark: #1alala;
+--color-bg-dark: #1a1a1a;
 
 --color-white: #ffffff;
 
@@ -40,13 +42,13 @@
 
 --shadow-md:0 4px 20px rgba(0, 0, 0, 0.12);
 
---shadow-1g: 0 8px 40px rgba(0, 0, 0, 0.18);
+--shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.18);
 
 --radius-sm: 6px;
 
 --radius-md: 12px;
 
---radius-1g: 20px;
+--radius-lg: 20px;
 
 --transition: 0.3s ease;
 

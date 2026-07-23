@@ -62,9 +62,8 @@ export default function About() {
     <main>
       <Hero
         subtitle="About ABHI TUITIONS"
-        title="Shaping Minds, Building Futures"
+        titlePart1="Shaping Minds, Building Futures"
         description="Since 2009, we have been the trusted academic partner for thousands of families, providing quality education with a personal touch."
-        backgroundVariant="charcoal"
       />
 
       {/* Mission */}

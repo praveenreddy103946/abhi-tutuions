@@ -10,6 +10,8 @@ import React, { useEffect } from 'react';
  import About from './pages/About/About';
  import Admissions from './pages/Admissions/Admissions';
  import DemoTutorials from './pages/DemoTutorials/Demotutorials';
+ import Registration from './pages/Registration/Registration';
+import Admin from './pages/Admin/Admin';
 //import Academics from './pages/Academics/Academics';
 //import NewsEvents from './pages/NewsEvents/NewsEvents';
 //import Gallery from './pages/Gallery/Gallery';
@@ -25,11 +27,13 @@ export default function App() {
   return (
   <Router><ScrollToTop />
   <Navbar />
-  <div className="app page-wrap">
+  <div className="app__page-wrap">
     <Routes><Route path="/" element={<Home />} />
     <Route path="/about" element={<About />} />
     <Route path="/admissions" element={<Admissions />} />
     <Route path="/demo-tutorials" element={<DemoTutorials />} />
+    <Route path="/register" element={<Registration />} />
+    <Route path="/admin" element={<Admin />} />
     {/* <Route path="/academics" element={<Academics />} /> 
     <Route path="/news-events" element={<NewsEvents />} />
     <Route path="/gallery" element={<Gallery />} />

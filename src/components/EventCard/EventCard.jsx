@@ -14,7 +14,7 @@ return (
             <h4 className="event-card__title">{title}</h4>
             <p className="event-card__desc">{description}</p>
             <div className="event-card__meta">
-                {time && <span> (time)</span>}      
+                {time && <span> 🕛{time}</span>}      
                 {location && <span> {location}</span>}
             </div>
         </div>

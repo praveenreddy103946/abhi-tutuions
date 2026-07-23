@@ -31,14 +31,14 @@
     font-weight: bold;
     line-height: 1;
 }
-.event-card_month {
+.event-card__month {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
 }
 
-.event-card_body { flex: 1; }
+.event-card__body { flex: 1; }
 
 .event-card__category {
     display: inline-block;
@@ -50,11 +50,11 @@
     margin-bottom: 6px;
 }
 
-.event-card_title {
+.event-card__title {
     font-family: var(--font-heading);
     font-size: 16px;
     color: var(--color-navy);
-    margin: 8px;
+    margin: 0 0 8px;
 }
 .event-card__desc {
     font-size: 13px;
@@ -63,7 +63,7 @@
     line-height: 1.5;
 }
     
-.event-card_meta {
+.event-card__meta {
     display: flex;
     gap: 16px;
     font-size: 12px;

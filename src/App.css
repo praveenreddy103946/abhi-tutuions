@@ -20,9 +20,11 @@ body {
 
 font-family: var(--font-body);
 
-color: var(--color-text);
-
-background: var(--color-bg);
+color: var(--color-white);
+background-image: linear-gradient(to bottom, rgba(10, 20, 40, 0.2) 0%, rgba(10, 20, 40, 0.9) 100%), url('./assets/images/students_image.jpg');
+background-size: cover;
+background-position: center top;
+background-attachment: fixed;
 
 line-height: 1.6;
 
@@ -34,10 +36,9 @@ img { max-width: 100%; display: block; }
 
 button { font-family: var(--font-body); }
 
-.app_page-wrap {
+.app__page-wrap {
 
 padding-top: 70px;
 
-min-height: calc(100vh 70px);
-
+min-height: calc(100vh - 70px);
 }

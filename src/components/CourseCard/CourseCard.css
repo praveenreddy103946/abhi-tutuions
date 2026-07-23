@@ -65,7 +65,7 @@ margin: 0 0 12px;
 }
 
 .course-card__features li::before {
-    content: '';
+    content: '✔';
     position: absolute;
     left: 0;
     color: var(--color-forest);

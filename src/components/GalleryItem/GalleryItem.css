@@ -1,19 +1,19 @@
 @import "../../styles/variables.css";
 
 .gallery-item {
-  border-radius: var(radius-md);
+  border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: all var(-transition);
+  transition: all var(--transition);
 }
 
 .gallery-item:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-1g);
+  box-shadow: var(--shadow-lg);
 }
 
-.gallery-item_img {
+.gallery-item__img {
   aspect-ratio: 4/3;
   background-color: var(--color-navy);
   background-size: cover;
@@ -23,12 +23,12 @@
   align-items: center;
   justify-content: center;
 }
-.gallery-item_placeholder {
+.gallery-item__placeholder {
   font-size: 40px;
   opacity: 0.4;
 }
 
-.gallery-item_overlay {
+.gallery-item__overlay {
   position: absolute;
 
   inset: 0;
@@ -44,22 +44,22 @@
   justify-content: center;
 
   transition: opacity var(--transition);
-
-  -gallery-item:hover .gallery-item_overlay {
-    opacity: 1;
-  }
 }
 
-.gallery-item_zoom {
+.gallery-item:hover .gallery-item__overlay {
+    opacity: 1;
+  }
+
+.gallery-item__zoom {
   font-size: 32px;
 }
 
-.gallery-item_info {
+.gallery-item__info {
   background: var(--color-white);
   padding: 12px 16px;
 }
 
-.gallery-item_category {
+.gallery-item__category {
   font-size: 11px;
   color: var(--color-forest);
 
@@ -72,7 +72,7 @@
   margin: 0 0 4px;
 }
 
-.gallery-item_title {
+.gallery-item__title {
   font-family: var(--font-heading);
 
   font-size: 14px;

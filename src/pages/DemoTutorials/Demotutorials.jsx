@@ -2,8 +2,9 @@ import React, { useState, useMemo } from "react";
 
 import Hero from "../../components/Hero/Hero";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
-import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import VideoCard from "../../components/VideoCard/VideoCard";
+import { useLocation } from "react-router-dom";
 
 import { VIDEO_CATALOG, getVideoUrl } from "../../config/s3.config";
 
@@ -24,16 +25,19 @@ export default function DemoTutorials() {
       : VIDEO_CATALOG.filter((video) => video.subject === filter);
   }, [filter]);
 
+  const location = useLocation();
+  const skipHero = location.state?.skipHero;
+
   return (
     <main>
-      <Hero
-        subtitle="Demo Tutorials"
-        title="Learn Before You Enroll"
-        description="Watch our free demo lessons streamed directly from our library. No registration required."
-        backgroundVariant="navy"
-      />
-
-      <section className="demo_section">
+      {!skipHero && (
+        <Hero
+          subtitle="Demo Tutorials"
+          titlePart1="Learn Before You Enroll"
+          description="Watch our free demo lessons streamed directly from our library. No registration required."
+        />
+      )}
+      <section className={`demo_section ${skipHero ? 'demo_section--no-hero' : ''}`}>
         <div className="demo_inner">
 
           <SectionTitle

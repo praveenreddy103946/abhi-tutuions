@@ -5,6 +5,11 @@
   background: var(--color-bg);
 }
 
+.demo_section--no-hero {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
 .demo_inner {
   max-width: var(--max-width);
   margin: 0 auto;

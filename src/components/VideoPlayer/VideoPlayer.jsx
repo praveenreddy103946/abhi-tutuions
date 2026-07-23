@@ -1,5 +1,15 @@
-import React, { useRef, useState, useCallback, use } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import "./VideoPlayer.css";
+import {
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  Maximize,
+  Minimize,
+  RotateCcw,
+  RotateCw
+} from "lucide-react";
 
 export default function VideoPlayer({ src, title, poster }) {
   const videoRef = useRef(null);
@@ -9,7 +19,7 @@ export default function VideoPlayer({ src, title, poster }) {
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [volume, setVolume] = useState(1);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [buffered, setBuffered] = useState(0);
@@ -35,18 +45,15 @@ export default function VideoPlayer({ src, title, poster }) {
 
   const togglePlay = () => {
     const video = videoRef.current;
+
     if (!video) return;
 
     if (video.paused) {
-      video.muted = false;
-      setMuted(false);
       userStarted.current = true;
       video.play();
-      setPlaying(true);
     } else {
-      video.pause();
-      setPlaying(false);
       userStarted.current = false;
+      video.pause();
     }
 
     resetControlsTimer();
@@ -56,13 +63,13 @@ export default function VideoPlayer({ src, title, poster }) {
     const video = videoRef.current;
     if (!video || userStarted.current) return;
 
-    video.muted = true;
-    setMuted(true);
+    video.volume = volume;
+    video.muted = false;
+    setMuted(false);
 
-    video.play().catch(() => {});
+    video.play().catch(() => { });
     setPlaying(true);
   };
-
   const onMouseLeave = () => {
     const video = videoRef.current;
     if (!video || userStarted.current) return;
@@ -74,7 +81,7 @@ export default function VideoPlayer({ src, title, poster }) {
     setProgress(0);
     setCurrentTime(0);
     if (playing) setShowControls(false);
-    };
+  };
 
   const onTimeUpdate = () => {
     const video = videoRef.current;
@@ -85,9 +92,7 @@ export default function VideoPlayer({ src, title, poster }) {
 
     if (video.buffered.length > 0) {
       setBuffered(
-        (video.buffered.end(video.buffered.length - 1) /
-          video.duration) *
-          100
+        (video.buffered.end(video.buffered.length - 1) / video.duration) * 100,
       );
     }
   };
@@ -109,6 +114,7 @@ export default function VideoPlayer({ src, title, poster }) {
 
     if (videoRef.current) {
       videoRef.current.volume = value;
+      videoRef.current.muted = value === 0;
     }
 
     setMuted(value === 0);
@@ -140,15 +146,14 @@ export default function VideoPlayer({ src, title, poster }) {
 
     video.currentTime = Math.min(
       Math.max(0, video.currentTime + seconds),
-      video.duration
+      video.duration,
     );
   };
 
   return (
     <div
       className={`vp ${fullscreen ? "vp--fullscreen" : ""}`}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+
       onMouseMove={resetControlsTimer}
     >
       <video
@@ -157,12 +162,12 @@ export default function VideoPlayer({ src, title, poster }) {
         src={src}
         poster={poster}
         preload="metadata"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
         muted={muted}
         onClick={togglePlay}
         onTimeUpdate={onTimeUpdate}
-        onLoadedMetadata={() =>
-          setDuration(videoRef.current?.duration || 0)
-        }
+        onLoadedMetadata={() => setDuration(videoRef.current?.duration || 0)}
         onEnded={() => {
           setPlaying(false);
           setShowControls(true);
@@ -176,55 +181,40 @@ export default function VideoPlayer({ src, title, poster }) {
           onClick={togglePlay}
           aria-label="Play video"
         >
-          ▶
+          <Play size={34} fill="currentColor" />
         </button>
       )}
 
       <div
-        className={`vp__controls ${
-          showControls ? "vp__controls-visible" : ""
-        }`}
+        className={`vp__controls ${showControls ? "vp__controls--visible" : ""
+          }`}
       >
         <div className="vp__progress-bar" onClick={onSeek}>
-          <div
-            className="vp_buffered"
-            style={{ width: `${buffered}%` }}
-          />
-          <div
-            className="vp__played"
-            style={{ width: `${progress}%` }}
-          />
-          <div
-            className="vp_thumb"
-            style={{ left: `${progress}%` }}
-          />
+          <div className="vp__buffered" style={{ width: `${buffered}%` }} />
+          <div className="vp__played" style={{ width: `${progress}%` }} />
+          <div className="vp__thumb" style={{ left: `${progress}%` }} />
         </div>
 
         <div className="vp__toolbar">
           <div className="vp__toolbar-left">
             <button className="vp__btn" onClick={togglePlay}>
-              {playing ? "⏸" : "▶"}
+              {playing ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" />}
             </button>
 
-            <button
-              className="vp__btn"
-              onClick={() => skip(-10)}
-            >
-              ⏪
+            <button className="vp__btn" onClick={() => skip(-10)}>
+              <RotateCcw size={22} />
             </button>
 
-            <button
-              className="vp__btn"
-              onClick={() => skip(10)}
-            >
-              ⏩
+            <button className="vp__btn" onClick={() => skip(10)}>
+              <RotateCw size={22} />
             </button>
 
-            <button
-              className="vp__btn"
-              onClick={toggleMute}
-            >
-              {muted || volume === 0 ? "🔇" : "🔊"}
+            <button className="vp__btn" onClick={toggleMute}>
+              {muted || volume === 0 ?
+                <VolumeX size={18} />
+                :
+                <Volume2 size={18} />
+              }
             </button>
 
             <input
@@ -233,7 +223,7 @@ export default function VideoPlayer({ src, title, poster }) {
               min="0"
               max="1"
               step="0.05"
-              value={muted ? 0 : volume}
+              value={volume}
               onChange={onVolumeChange}
             />
 
@@ -243,15 +233,14 @@ export default function VideoPlayer({ src, title, poster }) {
           </div>
 
           <div className="vp__toolbar-right">
-            {title && (
-              <span className="vp__title">{title}</span>
-            )}
+            {title && <span className="vp__title">{title}</span>}
 
-            <button
-              className="vp__btn"
-              onClick={toggleFullscreen}
-            >
-              {fullscreen ? "🡼" : "⛶"}
+            <button className="vp__btn" onClick={toggleFullscreen}>
+              {fullscreen ?
+                <Minimize size={18} />
+                :
+                <Maximize size={18} />
+              }
             </button>
           </div>
         </div>
